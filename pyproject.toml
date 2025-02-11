@@ -1,0 +1,114 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scrudge_orm"
+description = "ORM based on pydantic, SQLAlchemy and databases"
+readme = "README.md"
+version = "0.0.1"
+requires-python = ">=3.11"
+authors = [
+    { name = "Ravil Nazipov", email = "dvsroveil@gmail.com" },
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3",
+]
+dependencies = [
+    "databases==0.8.0",
+    "psycopg2-binary>=2.9,<3",
+    "python-dateutil>=2.9,<3",
+    "python-dotenv==1.0.1",
+    "pydantic[email]>=2.10,<3",
+    "pycryptodome>=3.17,<4",
+    "sqlalchemy>=1.4.54,<2",
+    "uv>=0.5,<6",
+]
+
+
+[project.optional-dependencies]
+dev = [
+    "asyncpg-stubs==0.30.0",
+    "ruff==0.7.2",
+    "mypy==1.13.0",
+    "mypy-extensions==1.0.0",
+    "pytest==8.3.4",
+    "pytest-mock==3.14.0",
+    "pytest-asyncio==0.25.3",
+    "sqlalchemy-stubs==0.4",
+    "types-redis==4.6.0.20241004",
+    "types-python-dateutil==2.9.0.20241206",
+]
+
+[tool.ruff]
+# Exclude a variety of commonly ignored directories.
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+]
+
+line-length = 120
+indent-width = 4
+
+# Assume Python 3.12
+target-version = "py312"
+
+[tool.ruff.lint.mccabe]
+# Unlike Flake8, default to a complexity level of 10.
+max-complexity = 30
+
+[tool.ruff.format]
+# Like Black, use double quotes for strings.
+quote-style = "double"
+
+# Like Black, indent with spaces, rather than tabs.
+indent-style = "space"
+
+# Like Black, respect magic trailing commas.
+skip-magic-trailing-comma = false
+
+# Like Black, automatically detect the appropriate line ending.
+line-ending = "auto"
+
+
+[tool.mypy]
+plugins = ["pydantic.mypy"]
+python_version = 3.12
+disallow_untyped_calls = true
+disallow_untyped_defs = true
+warn_unused_ignores = true
+warn_redundant_casts = true
+exclude = [
+    "^env/.*",
+    "^venv/.*",
+    "^tests/.*",
+    "^.git/.*",
+    "^.venv/.*",
+    "^__pypackages__/.*",
+    "$git-hooks/.*",
+]
+
+[tool.pydantic-mypy]
+init_typed = false
+init_forbid_extra = true
+warn_required_dynamic_aliases = true
