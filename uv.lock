@@ -54,7 +54,9 @@ asyncpg==0.30.0 \
     --hash=sha256:f86b0e2cd3f1249d6fe6fd6cfe0cd4538ba994e2d8249c0491925629b9104d0f \
     --hash=sha256:fb622c94db4e13137c4c7f98834185049cc50ee01d8f657ef898b6407c7b9c50 \
     --hash=sha256:fd4406d09208d5b4a14db9a9dbb311b6d7aeeab57bded7ed2f8ea41aeef39b34
-    # via asyncpg-stubs
+    # via
+    #   scrudge-orm (pyproject.toml)
+    #   asyncpg-stubs
 asyncpg-stubs==0.30.0 \
     --hash=sha256:1eac258c10fc45a781729913a2fcfba775888bed160ae47f55fe0964d639e9cd \
     --hash=sha256:8bfe20f1b1e24a19674152ec9abbcc2df72c01e78af696f44fc275d56fe335ba

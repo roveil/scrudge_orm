@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "scrudge_orm"
 description = "ORM based on pydantic, SQLAlchemy and databases"
 readme = "README.md"
-version = "0.0.2"
+version = "0.0.3"
 requires-python = ">=3.11"
 authors = [
     { name = "Ravil Nazipov", email = "dvsroveil@gmail.com" },
@@ -19,7 +19,6 @@ classifiers = [
 ]
 dependencies = [
     "databases==0.8.0",
-    "psycopg2-binary>=2.9,<3",
     "python-dateutil>=2.9,<3",
     "python-dotenv==1.0.1",
     "pydantic[email]>=2.10,<3",
@@ -30,11 +29,14 @@ dependencies = [
 
 
 [project.optional-dependencies]
+postgres = ["asyncpg==0.30.0", "psycopg2-binary>=2.9,<3"]
 dev = [
+    "asyncpg==0.30.0",
     "asyncpg-stubs==0.30.0",
     "ruff==0.7.2",
     "mypy==1.13.0",
     "mypy-extensions==1.0.0",
+    "psycopg2-binary>=2.9,<3",
     "pytest==8.3.4",
     "pytest-mock==3.14.0",
     "pytest-asyncio==0.25.3",
