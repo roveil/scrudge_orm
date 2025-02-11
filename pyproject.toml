@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "scrudge_orm"
 description = "ORM based on pydantic, SQLAlchemy and databases"
 readme = "README.md"
-version = "0.0.1"
+version = "0.0.2"
 requires-python = ">=3.11"
 authors = [
     { name = "Ravil Nazipov", email = "dvsroveil@gmail.com" },
@@ -89,7 +89,6 @@ skip-magic-trailing-comma = false
 
 # Like Black, automatically detect the appropriate line ending.
 line-ending = "auto"
-
 
 [tool.mypy]
 plugins = ["pydantic.mypy"]

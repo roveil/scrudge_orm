@@ -2,7 +2,7 @@ from typing import TYPE_CHECKING, Generator
 
 from sqlalchemy import create_engine
 
-from scrudge_orm.backends.postgres import SupportedPGDriver
+from scrudge_orm.backends.consts import SupportedPGDriver
 
 if TYPE_CHECKING:
     from scrudge_orm.backends.postgres import PGDatabaseBackend, PGDatabaseSettings
