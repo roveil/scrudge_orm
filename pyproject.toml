@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "scrudge_orm"
 description = "ORM based on pydantic, SQLAlchemy and databases"
 readme = "README.md"
-version = "0.0.4"
+version = "0.0.5"
 requires-python = ">=3.11"
 authors = [
     { name = "Ravil Nazipov", email = "dvsroveil@gmail.com" },

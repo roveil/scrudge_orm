@@ -57,7 +57,7 @@ class DatabaseBackend:
         )
         self.metadata = MetaData()
         self.project_root_dir = project_root_dir
-        self.tag_sql_queries = (tag_sql_queries,)
+        self.tag_sql_queries = tag_sql_queries
         self._connect_lock: Optional[Lock] = None
 
     @property
