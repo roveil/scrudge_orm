@@ -7,8 +7,8 @@ from tests.db_backends import postgres_backend
 
 
 class UnitTestOptionalPostgresModel(PostgresModel):
-    int_field: Optional[int] = PostgresField(PostgresFieldTypes.INTEGER)
-    str_field: Optional[str] = PostgresField(PostgresFieldTypes.TEXT)
+    int_field: Optional[int] = PostgresField(PostgresFieldTypes.INTEGER, nullable=True)
+    str_field: Optional[str] = PostgresField(PostgresFieldTypes.TEXT, nullable=True)
 
     class Meta(PostgresMeta):
         db_backend = postgres_backend
@@ -19,7 +19,7 @@ class UnitTestOptionalPostgresModel(PostgresModel):
 
 
 class UnitTestSHA512CryptoModel(PostgresModel):
-    field_str: SHA512EncryptedStringAnnotation = PostgresField(PostgresFieldTypes.TEXT, nullable=False)
+    field_str: SHA512EncryptedStringAnnotation = PostgresField(PostgresFieldTypes.TEXT)
 
     class Meta(PostgresMeta):
         db_backend = postgres_backend
@@ -27,9 +27,9 @@ class UnitTestSHA512CryptoModel(PostgresModel):
 
 class UnitTestIDPkPostgresModel(PostgresModel):
     id: int = PostgresField(
-        PostgresFieldTypes.BIGINT, default=None, primary_key=True, nullable=False, autoincrement=True
+        PostgresFieldTypes.BIGINT, default=None, primary_key=True, autoincrement=True
     )
-    int_field: Optional[int] = PostgresField(PostgresFieldTypes.INTEGER)
+    int_field: Optional[int] = PostgresField(PostgresFieldTypes.INTEGER, nullable=True)
 
     class Meta(PostgresMeta):
         db_backend = postgres_backend

@@ -23,14 +23,14 @@ class UnitTestModelWithEQ(UnitTestModel):
 
 
 class UnitTestModelOptionalInt(UnitTestModel):
-    int_field: Optional[int] = PostgresField(PostgresFieldTypes.INTEGER, gt=1, lt=10)  # type: ignore
+    int_field: Optional[int] = PostgresField(PostgresFieldTypes.INTEGER, gt=1, lt=10, nullable=True)  # type: ignore
 
     class Meta(MetaBase):
         is_proxy = True
 
 
 class UnitTestModelOptionalIntWithEQ(UnitTestModel):
-    int_field: Optional[int] = PostgresField(PostgresFieldTypes.INTEGER, ge=1, le=10)  # type: ignore
+    int_field: Optional[int] = PostgresField(PostgresFieldTypes.INTEGER, ge=1, le=10, nullable=True)  # type: ignore
 
     class Meta(MetaBase):
         is_proxy = True

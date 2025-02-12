@@ -9,7 +9,7 @@ from scrudge_orm.models.postgres import PostgresModel
 
 
 class UnitTestModel(PostgresModel):
-    float_field: float = PostgresField(PostgresFieldTypes.FLOAT, gt=1.5, lt=10.5, nullable=False)
+    float_field: float = PostgresField(PostgresFieldTypes.FLOAT, gt=1.5, lt=10.5)
 
     class Meta(MetaBase):
         is_proxy = True
@@ -23,14 +23,14 @@ class UnitTestModelWithEQ(UnitTestModel):
 
 
 class UnitTestModelOptionalInt(UnitTestModel):
-    float_field: Optional[float] = PostgresField(PostgresFieldTypes.FLOAT, gt=1.5, lt=10.5)  # type: ignore
+    float_field: Optional[float] = PostgresField(PostgresFieldTypes.FLOAT, gt=1.5, lt=10.5, nullable=True)  # type: ignore
 
     class Meta(MetaBase):
         is_proxy = True
 
 
 class UnitTestModelOptionalIntWithEQ(UnitTestModel):
-    float_field: Optional[float] = PostgresField(PostgresFieldTypes.FLOAT, ge=1.5, le=10.5)  # type: ignore
+    float_field: Optional[float] = PostgresField(PostgresFieldTypes.FLOAT, ge=1.5, le=10.5, nullable=True)  # type: ignore
 
     class Meta(MetaBase):
         is_proxy = True
