@@ -22,7 +22,7 @@ def database_field(
     primary_key: bool = False,
     index: bool = False,
     unique: bool = False,
-    nullable: bool = True,
+    nullable: bool = False,
     server_default: Optional[Union[str, "SQLAlchemyTextClause", "SQLAlchemyFunction"]] = None,
     onupdate: Optional[Union[Callable, "SQLAlchemyFunction", "ClauseElement"]] = None,
     default: Any = Ellipsis,
