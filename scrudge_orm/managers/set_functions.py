@@ -68,4 +68,5 @@ class EQNotNULLSetFunction(BaseSetFunction):
     name = "eq_not_null"
 
     def get_expression(self, column: "Column", column_with_value_to_set: "Column") -> "ColumnElement":
-        return column
+        # column to set is null, existing value will set
+        return func.coalesce(column_with_value_to_set, column)
