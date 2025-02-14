@@ -26,9 +26,7 @@ class UnitTestSHA512CryptoModel(PostgresModel):
 
 
 class UnitTestIDPkPostgresModel(PostgresModel):
-    id: int = PostgresField(
-        PostgresFieldTypes.BIGINT, default=None, primary_key=True, autoincrement=True
-    )
+    id: int = PostgresField(PostgresFieldTypes.BIGINT, default=None, primary_key=True, autoincrement=True)
     int_field: Optional[int] = PostgresField(PostgresFieldTypes.INTEGER, nullable=True)
 
     class Meta(PostgresMeta):

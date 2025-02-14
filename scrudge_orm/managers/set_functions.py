@@ -62,3 +62,10 @@ class GreatestSetFunction(BaseSetFunction):
 
     def get_expression(self, column: "Column", column_with_value_to_set: "Column") -> "ColumnElement":
         return func.greatest(column, column_with_value_to_set)
+
+
+class EQNotNULLSetFunction(BaseSetFunction):
+    name = "eq_not_null"
+
+    def get_expression(self, column: "Column", column_with_value_to_set: "Column") -> "ColumnElement":
+        return column
